@@ -1,14 +1,13 @@
-module.exports = {
-    webpack: (config, { isServer }) => {
-        // Fixes npm packages that depend on `fs` module
-        if (!isServer) {
-            config.node = {
-                fs: 'empty'
-            }
-        }
-        return config
+const { withPlaiceholder } = require("@plaiceholder/next")
+
+module.exports = withPlaiceholder({
+    webpack5: true,
+    webpack: (config) => {
+        config.resolve.fallback = { fs: false,  };
+        return config;
     },
-    // images: {
-    //     domains: ['res.cloudinary.com'],
-    // },
-}
+    images: {
+        domains: ['res.cloudinary.com'],
+    },
+})
+

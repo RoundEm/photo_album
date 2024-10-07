@@ -60,7 +60,7 @@ const CloseCarouselBtn = styled.button`
 export default function AlbumName({ albumImages }) {
     const [currentSlideIndex, setCurrentSlideIndex] = useState(null)
     const [carouselIsActive, setCarouselIsActive] = useState(false)
-    // console.log(`albumImages: `, albumImages)
+    console.log(`albumImages: `, albumImages)
 
     // Ensures overflow isn't hidden when browser back is selected while modal is open
     useEffect(() => {
